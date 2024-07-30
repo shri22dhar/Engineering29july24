@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Engineering App</title>
+		<style>
+		*{font-size:50px;font-family:Calibri;}
+		body{background-color:fuchsia;}
+		h1,h2{background-color:black; color:white;width:70%;border-radius:30px;}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>Engineering App</h1>
+			<form onsubmit="show()">
+			<label for="name">Name</label>
+			<input type="text"placeholder="Enter your Name" id="name">
+			<br/><br/>
+			<label for="eyear">Select Engg Year</label>
+			<select id="eyear">
+				<option value="npt"/>option
+				<option value="FE"/>FE
+				<option value="SE"/>SE
+				<option value="TE"/>TE
+				<option value="BE"/>BE
+
+			</select>
+			<br/><br/>
+			<input type="submit"/>
+			</form>
+			<h2 id="msg"/>
+			<script>
+				function show()
+					{
+						event.preventDefault();
+						let name=document.getElementById("name");
+						let eyear=document.getElementById("eyear");
+						let msg=document.getElementById("msg");
+						
+						if(name.value==="")
+						{	
+							alert("please enter ur Name");
+							msg.innerHTML="";
+							name.focus();
+							return;		
+						}
+
+						if(eyear.value==="npt")
+						{	
+							alert("please select option");
+							msg.innerHTML="";
+							name.focus();
+							return;		
+						}
+
+												
+						
+						let a="Name=> "+name.value  + " Engineering => " +eyear.value;
+						msg.innerHTML=a;
+					}
+
+			</script>
+
+		</center>
+	</body>
+</html>
